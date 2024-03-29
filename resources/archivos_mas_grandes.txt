@@ -1,0 +1,6 @@
+Los archivos mayores a 300 MB en /d/Cursos son:
+Archivo: /d/Cursos/Idiomas/English_US_1.iso - Propietario: family - Tamaño: 409MB - Tipo: application/x-iso9660-image
+Archivo: /d/Cursos/Idiomas/English_US_2.iso - Propietario: family - Tamaño: 360MB - Tipo: application/x-iso9660-image
+Archivo: /d/Cursos/Idiomas/English_US_3.iso - Propietario: family - Tamaño: 405MB - Tipo: application/x-iso9660-image
+Archivo: /d/Cursos/Idiomas/English_US_4.iso - Propietario: family - Tamaño: 406MB - Tipo: application/x-iso9660-image
+Archivo: /d/Cursos/Idiomas/English_US_5.iso - Propietario: family - Tamaño: 441MB - Tipo: application/x-iso9660-image

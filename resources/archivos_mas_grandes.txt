@@ -1,0 +1,5 @@
+Los archivos mayores a 3 MB en /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir son:
+Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/Copy (3) of Postalitas.jpg - Propietario: 1000 - Tamaño: 4MB - Tipo: .jpg
+Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/Copy of Postalitas.jpg - Propietario: 1000 - Tamaño: 4MB - Tipo: .jpg
+Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/DSCN0787.jpg - Propietario: 1000 - Tamaño: 3MB - Tipo: .jpg
+Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/DSCN0832.jpg - Propietario: 1000 - Tamaño: 3MB - Tipo: .jpg

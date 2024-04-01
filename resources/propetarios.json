@@ -1,0 +1,22 @@
+[
+    {
+        "archivo": "/run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/Copy (3) of Postalitas.jpg",
+        "propietario": 1000,
+        "tama\u00f1o": "4MB"
+    },
+    {
+        "archivo": "/run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/Copy of Postalitas.jpg",
+        "propietario": 1000,
+        "tama\u00f1o": "4MB"
+    },
+    {
+        "archivo": "/run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/DSCN0787.jpg",
+        "propietario": 1000,
+        "tama\u00f1o": "3MB"
+    },
+    {
+        "archivo": "/run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/DSCN0832.jpg",
+        "propietario": 1000,
+        "tama\u00f1o": "3MB"
+    }
+]

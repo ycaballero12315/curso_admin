@@ -14,6 +14,10 @@ El Sistema de Monitoreo de Archivos en los FileServer del Dominio refcfg.cu es u
 
 # Instalacion
 
+## Configuracion
+
+Crear la carpeta env dentro config.py con las variables de entorno
+
 ## Uso
 
 # Scan

@@ -1,11 +1,17 @@
+#!/usr/bin/env python3
 import os
+import sys
 import json
+from subprocess import check_output
 
-def mostrar_error(mensaje):
-    print("Error:", mensaje)
-    exit(1)
+# Función para mostrar un mensaje de error y salir del script
+def mostrar_error(msg):
+    print("Error:", msg, file=sys.stderr)
+    sys.exit(1)
 
+# Función para convertir el tamaño del archivo a MB o GB
 def convertir_tamaño(size):
+    size = int(size)
     if size < 1024:
         return f"{size}B"
     elif size < 1048576:
@@ -15,42 +21,84 @@ def convertir_tamaño(size):
     else:
         return f"{size // 1073741824}GB"
 
-cantidad_mb = input("Ingrese la cantidad de MB que deben tener los archivos grandes: ")
+# Solicitar al usuario el directorio
+directorio = input("Ingrese la ruta del directorio a analizar: ")
 
-if not cantidad_mb.isdigit():
+# Verificar si el directorio especificado existe y es un directorio
+if not os.path.isdir(directorio):
+    mostrar_error("El directorio especificado no existe o no es un directorio.")
+
+# Solicitar al usuario la cantidad de MB de los archivos grandes
+try:
+    cantidad_mb = int(input("Ingrese la cantidad de MB que deben tener los archivos grandes que usted considera son grandes: "))
+except ValueError:
     mostrar_error("La cantidad ingresada no es un número válido.")
 
-directorio = input("Ingrese el directorio a analizar: ")
+# Definir las rutas de los archivos de salida
+output_dir = "./resources"
+output_json = os.path.join(output_dir, "propietarios.json")
+output_txt = os.path.join(output_dir, "archivos_mas_grandes.txt")
 
-if not os.path.isdir(directorio):
-    mostrar_error("El directorio especificado no existe.")
+# Verificar si los archivos de salida existen y preguntar al usuario si desea sobrescribirlos
+if os.path.exists(output_json) or os.path.exists(output_txt):
+    respuesta = input("Los archivos de salida ya existen. ¿Desea sobrescribirlos? (s/n): ").strip().lower()
+    if respuesta != "s":
+        mostrar_error("Operación cancelada por el usuario.")
 
-result = []
-for root, _, files in os.walk(directorio):
-    for file in files:
-        file_path = os.path.join(root, file)
-        size = os.path.getsize(file_path)
-        if size > int(cantidad_mb) * 1024 * 1024:
-            owner = os.stat(file_path).st_uid
-            size_human = convertir_tamaño(size)
-            result.append({
-                "archivo": file_path,
-                "propietario": owner,
-                "tamaño": size_human
-            })
-
-output_json = "./resources/propetarios.json"
-output_txt = "./resources/archivos_mas_grandes.txt"
-
+# Listar archivos en el directorio y mostrar los archivos más grandes
 try:
-    with open(output_json, "w") as json_file:
-        json.dump(result, json_file, indent=4)
-    
-    with open(output_txt, "w") as txt_file:
-        txt_file.write(f"Los archivos mayores a {cantidad_mb} MB en {directorio} son:\n")
-        for item in result:
-            txt_file.write(f"Archivo: {item['archivo']} - Propietario: {item['propietario']} - Tamaño: {item['tamaño']} - Tipo: {os.path.splitext(item['archivo'])[1]}\n")
-
-    print(f"La información se ha guardado en {output_json} (JSON) y {output_txt} (TXT)")
+    result = check_output(["find", directorio, "-type", "f", "-size", f"+{cantidad_mb}M"]).decode("utf-8").splitlines()
 except Exception as e:
-    mostrar_error(f"Error al guardar los archivos: {e}")
+    mostrar_error(f"No se pudo listar los archivos: {e}")
+
+# Verificar si se encontraron archivos
+if not result:
+    mostrar_error(f"No se encontraron archivos mayores a {cantidad_mb}MB en el directorio: {directorio}")
+
+# Crear lista de diccionarios para el JSON
+output_json_data = []
+for file in result:
+    # Obtener la parte del servidor
+    servidor = file.split("server=")[-1].split(",")[0]
+    # Obtener la parte del directorio después de la conexión
+    directorio_sin_conexion = file.split("smb-share:server=")[-1].split(",")[-1][2:]
+    # Eliminar el nombre del archivo del directorio
+    directorio_sin_archivo = os.path.dirname(directorio_sin_conexion).replace("are=d$", "")
+    owner = os.stat(file).st_uid
+    size = os.stat(file).st_size
+    size_human = convertir_tamaño(size)
+    type = check_output(["file", "-b", "--mime-type", file]).decode("utf-8").strip()
+    output_json_data.append({
+        "archivo": os.path.basename(file),
+        "directorio": directorio_sin_archivo,
+        "servidor": servidor,
+        "propietario": owner,
+        "tamaño": size_human,
+        "tipo": type
+    })
+
+# Guardar la salida en un archivo JSON
+try:
+    with open(output_json, "w", encoding="utf-8") as f:
+        json.dump(output_json_data, f, indent=4, ensure_ascii=False)
+except Exception as e:
+    mostrar_error(f"No se pudo escribir en el archivo JSON: {e}")
+
+# Guardar la salida en un archivo de texto (TXT)
+try:
+    with open(output_txt, "w") as f:
+        f.write(f"Los archivos mayores a {cantidad_mb} MB en {directorio} son:\n")
+        for file in result:
+            size = os.stat(file).st_size
+            size_human = convertir_tamaño(size)
+            type = check_output(["file", "-b", "--mime-type", file]).decode("utf-8").strip()
+            f.write(f"Archivo: {os.path.basename(file)} - Propietario: {owner} - Tamaño: {size_human} - Tipo: {type}\n")
+except Exception as e:
+    mostrar_error(f"No se pudo escribir en el archivo TXT: {e}")
+
+print(f"La información se ha guardado en {output_json} (JSON) y {output_txt} (TXT)")
+
+
+
+
+

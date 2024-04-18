@@ -1,5 +1,8 @@
-Los archivos mayores a 3 MB en /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir son:
-Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/Copy (3) of Postalitas.jpg - Propietario: 1000 - Tamaño: 4MB - Tipo: .jpg
-Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/Copy of Postalitas.jpg - Propietario: 1000 - Tamaño: 4MB - Tipo: .jpg
-Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/DSCN0787.jpg - Propietario: 1000 - Tamaño: 3MB - Tipo: .jpg
-Archivo: /run/user/1000/gvfs/smb-share:server=vs33.refcfg.cu,share=d$/REFCFG/Direcciones/SHA/Medio Ambiente/01/CARPETA 3/FFAMILY/Fotos Glenda imprimir/DSCN0832.jpg - Propietario: 1000 - Tamaño: 3MB - Tipo: .jpg
+Los archivos mayores a 50 MB en /run/user/yoeny/gvfs/smb-share:server=vs31.cuvenpetrol.cu,share=d$/CUVENPETROL/Gerencia SHA/videos nuevos son:
+Archivo: Equipos De Protección Personal (EPP) _ Seguridad Industrial.mp4 - Propietario: malayon - Tamaño: 59MB - Tipo: video/mp4
+Archivo: Evacuación de plantas industriales.mpg - Propietario: aaramirez - Tamaño: 54MB - Tipo: video/mpeg
+Archivo: napo-012-danger-chemicals.mp4 - Propietario: malayon - Tamaño: 86MB - Tipo: video/mp4
+Archivo: napo-015-safe-moves.mp4 - Propietario: malayon - Tamaño: 59MB - Tipo: video/mp4
+Archivo: napo-017-working-together.mp4 - Propietario: malayon - Tamaño: 86MB - Tipo: video/mp4
+Archivo: Programa BiTV _ Seguridad Industrial con Cemex.mp4 - Propietario: malayon - Tamaño: 105MB - Tipo: video/mp4
+Archivo: Seguridad en Conducción de Vehículos.mpg - Propietario: rcaballero - Tamaño: 151MB - Tipo: video/mpeg

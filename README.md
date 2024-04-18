@@ -1,4 +1,4 @@
-# Nombre del Proyecto
+## Nombre del Proyecto
 
 Título del Proyecto: Sistema de Monitoreo de Ficheros en FileServer del dominio refcfg.cu
 
@@ -12,13 +12,15 @@ Beneficios:
 • Proporciona una solución automatizada para monitorear y notificar sobre el uso excesivo de espacio en disco en los servidores de ficheros del dominio refcfg.
 El Sistema de Monitoreo de Archivos en los FileServer del Dominio refcfg.cu es una herramienta útil para administradores de sistemas y los especialistas de seguridad informatica que necesitan mantener un control efectivo sobre el uso de espacio en disco en entornos empresariales.
 
-# Instalacion
+## Instalacion
+
+git clone https://github.com/ycaballero12315/curso_admin.git
 
 ## Configuracion
 
 Crear la carpeta env dentro config.py con las variables de entorno
 
-## Uso
+# Uso
 
 # Scan
 

@@ -1,0 +1,11 @@
+# Ignorar archivos de compilación generados automáticamente
+*.o
+*.class
+*.pyc
+
+
+# Ignorar directorios y archivos específicos
+build/
+scripts/__pycache__
+env/config.py
+directorios.py

@@ -7,5 +7,6 @@
 # Ignorar directorios y archivos específicos
 build/
 scripts/__pycache__
+resources/
 env/config.py
 directorios.py
